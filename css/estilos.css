@@ -1,0 +1,286 @@
+/* Reglas comunes */
+    /* Colores y Fuentes de letra */
+    :root {
+        --color-texto-main: #434343;
+        --color-texto-headerfooter: white;
+        --color-link: #ff1616;
+        --color-fondo-main: white;
+        --color-recuadro: #eeeeee;
+
+        --fuente-sin-serifa: "Helvetica, Arial", sans-serif;
+        --fuente-con-serifa: "Georgia, Times", serif;
+    }
+    
+    
+    /* Resetear márgenes y espaciados de todos los elementos */
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        /* incluye los bordes en el width y height */
+        box-sizing: border-box;
+    }
+    
+    body {
+        /* Fuente por defecto */
+        font-family: var(--fuente-sin-serifa);
+        font-weight: normal;
+        font-size: small;
+        text-align: justify;
+        line-height: 1.5;
+        color: var(--color-texto-main);
+        
+        /* Color fondo */
+        background-color: var(--color-fondo-main);
+        
+        height: 100%;
+        min-width: 400px;
+        /* Flexbox */
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    
+    /* Contenedor */
+    .contenedor {
+        margin: auto;
+        padding: 15px;                        
+        width: 100%;
+        height: 100%;
+                
+        /* Flexbox */
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    header .contenedor, 
+    footer .contenedor {
+        color: var(--color-texto-headerfooter);
+        background-color: black;
+        
+        line-height: 2;
+        text-align: center;
+        
+        /* Flexbox */
+        align-items: center;
+    }
+    
+    header img {
+        width: 75px;
+    }
+    
+    /* Menú */    
+    .menu__links {
+        list-style: none;        
+    }
+    
+    .menu__links a {
+        color: var(--color-texto-headerfooter);
+    }
+    
+    .menu__links a:hover {
+        color: var(--color-link);
+    }
+    
+    .menu__links a.menu__links--seleccionado {
+        font-weight: bold;
+        font-style: italic;
+    }
+    
+    /* Modifico el menú para que en landscape no ocupe tanto */
+    @media(max-height:430px) {
+        header .contenedor {
+            /* Flexbox */
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        
+        .menu__links {
+            flex: 1;        
+        }
+    }
+                
+    
+    /* Otros elementos */
+    a {
+        text-decoration: none;
+        color: var(--color-link);
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    p {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+    
+    h1 {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        
+        font-weight: normal;
+        font-size: xxx-large;
+        line-height: 1;
+        
+        text-align: center;
+        /* Flexbox */
+        align-self: center;
+    }
+   
+    h2 {
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+        
+        font-weight: normal;
+        font-size: xx-large;
+        line-height: 1;
+        
+        text-align: left;
+    }
+    
+    ul {
+       padding-top: 0.5em;
+       padding-bottom: 0.5em;
+       padding-left: 1em;
+       
+       list-style: square;
+       list-style-position: inside;
+    }
+
+/* No común */
+    /* Artículo grande*/
+    .articulo--grande {       
+        /* Flexbox */
+        flex: 1;
+        width: 85%;
+        align-self: center;
+        
+        display: flex;
+        flex-direction: column;        
+        align-items: flex-start;
+    }
+    
+    .articulo__pie-elemento{
+        font-size: x-small;
+        
+        /* Flexbox */
+        align-self: flex-end;
+    }
+    
+    .articulo__datos{
+        font-size: x-small;
+        text-align: center;
+        background-color: var(--color-recuadro);
+        
+        padding: 4px;
+        /* Flexbox */
+        align-self: stretch;        
+    }
+    
+    .articulo__italic--serif{
+        font-family: var(--fuente-con-serifa);
+        font-style: italic;
+        /* Para ajustar a tamaño relativo a padre */
+        font-size: inherit;
+    }
+    
+    .articulo__autor{
+        font-size: x-small;
+            
+        padding: 30px;            
+        /* Flexbox */
+        flex: 1;
+        width: 75%;
+        align-self: center;
+        
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .articulo__autor__bold {
+        font-weight: bolder;
+        font-variant-caps: small-caps;
+    }
+    
+    .articulo__autor__imagen {
+        mask-image: radial-gradient(circle farthest-side at center, black 99%, rgba(0, 0, 0, 0));
+        width: 125px;
+        
+        /* Flexbox */
+        align-self: center;
+    }
+    
+    .articulo__video {
+        width: 80%;
+        min-height: 300px;
+        padding: 15px;
+        
+        /* Flexbox */
+        align-self: center;
+        
+        display: flex;
+        flex-direction: column;        
+        justify-content: space-between;
+    }
+    
+    .articulo__imagen--grande {
+        margin-top: 15px;
+        width: 100%;
+    }
+    
+    .articulo__imagen--mediana {
+        margin: 15px;
+        align-self: center;
+        width: 50%;
+    }
+    
+    .articulo__centrado {
+        align-self: center;
+    }
+    
+    /* Artículo mediano*/
+    .articulo--mediano {        
+        /* Flexbox */
+        flex: 1;
+        width: 50%;
+        align-self: center;
+        
+        display: flex;
+        flex-direction: column;        
+        align-items: flex-start;
+    }
+    
+    .articulo__cita {
+        background-color: var(--color-recuadro);
+        padding: 10px 20px 10px 20px;
+        margin-bottom: 15px;
+        border-left-color: var(--color-link);
+        border-left-style: solid;
+        border-left-width: 4px;
+        
+        font-family: var(--fuente-con-serifa);
+        font-size: medium;
+    }
+    
+    .articulo__italic {
+        font-style: italic;
+    }
+    
+    .articulo__lista--robots > li {
+        list-style: url('/images/icon-robot.png');
+        padding: 0.5em;
+    }
+    
+    .articulo__lista--robots-2 {
+        padding: 0;
+        padding-left: 3em;
+        list-style: disc;
+    }
+    
+    
