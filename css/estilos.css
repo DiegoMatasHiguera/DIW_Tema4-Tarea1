@@ -274,7 +274,6 @@
     
     .articulo__lista--robots > li {
         list-style: url('/images/icon-robot.png');
-        list-style-position: inside;
         padding: 0.5em;
     }
     
