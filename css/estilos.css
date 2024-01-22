@@ -115,6 +115,13 @@
         text-decoration: underline;
     }
     
+    cite {
+        font-family: var(--fuente-con-serifa);
+        font-style: italic;
+        /* Para ajustar a tamaño relativo a padre */
+        font-size: inherit;
+    }
+    
     p {
         padding-top: 0.5em;
         padding-bottom: 0.5em;
@@ -181,13 +188,6 @@
         padding: 4px;
         /* Flexbox */
         align-self: stretch;        
-    }
-    
-    .articulo__italic--serif{
-        font-family: var(--fuente-con-serifa);
-        font-style: italic;
-        /* Para ajustar a tamaño relativo a padre */
-        font-size: inherit;
     }
     
     .articulo__autor{
